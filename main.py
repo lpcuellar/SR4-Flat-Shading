@@ -15,7 +15,8 @@ main_menu = """Opciones:
         2. Aplicar Sombras a  una mascarilla
         3. Aplicar Sombras a unos lentes
         4. Aplicar Sombras a un carro
-        5. Salir
+        5. Aplicar Sombras a una cara
+        6. Salir
         """
 
 wants_to_continue = True
@@ -54,7 +55,7 @@ while(wants_to_continue):
                 ##  changes the background color of the image
                 render.glClearColor(r, g, b)
 
-    ##  draws a face mask
+    ##  shadows a face mask
     elif(option == 2):
         render.loadModel('./models/mask.obj', (500, 500, 0), (50, 50, 50), False)
         render.glZBuffer("mask.bmp")
@@ -62,22 +63,29 @@ while(wants_to_continue):
         wants_to_continue = False
 
 
-    ##  draws a sunglasses
+    ##  shadows a sunglasses
     elif(option == 3):
         render.loadModel('./models/Glasses.obj', (350, 500, 0), (4, 4, 4), False)
         render.glZBuffer("glasses.bmp")
         print("Termiado!")
         wants_to_continue = False
 
-    ##  draws an f1 car
+    ##  shadows an f1 car
     elif(option == 4):
         render.loadModel('./models/f1.obj', (500, 250, 0), (500, 500, 500), False)
         render.glZBuffer("f1.bmp")
         print("Termiado!")
         wants_to_continue = False
 
-    ##  exits the program
+    ##  shadows a face
     elif(option == 5):
+        render.loadModel('./models/model.obj', (500, 500, 0), (300, 300, 300), False)
+        render.glZBuffer("face.bmp")
+        print("Termiado!")
+        wants_to_continue = False
+        
+    ##  exits the program
+    elif(option == 6):
         wants_to_continue = False
         print("BYEEE")
 
